@@ -12,7 +12,7 @@
 (def ^:dynamic *accent* false)
 
 (defelem button [attr kids]
-  (let [ripple (or (:ripple-effect attr) *ripple-effect*)
+  (let [ripple (:ripple-effect attr *ripple-effect*)
         raised (or (:raised attr) *raised*)
         fab (or (:fab attr) *fab*)
         mini-fab (or (:mini-fab attr) *mini-fab*)
