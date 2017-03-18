@@ -2,7 +2,7 @@
   (:refer-hoplon :exclude [button])
   (:require [material-hl.core :as core]))
 
-(def ^:dynamic *mini* false)
+(def ^:dynamic *mini*  false)
 (def ^:dynamic *plain* false)
 
 (defelem fab [attr kids]
