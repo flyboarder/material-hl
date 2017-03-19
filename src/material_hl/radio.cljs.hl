@@ -1,0 +1,17 @@
+(ns material-hl.checkbox
+  (:require [material-hl.core :as core]
+            [hoplon.svg :as svg]))
+
+(def ^:dynamic *disabled* nil)
+
+(defelem checkbox [attr kids]
+  (let [dark     (:dark     attr *dark*)
+        disabled (:disabled attr *disabled*)]
+    (div
+      (core/assoc-class attr
+        {:mdc-radio           true
+         :mdc-radio--disabled disabled})
+      (input :type "radio" :class [:mdc-radio__native-control])
+      (div :class [:mdc-radio__background]
+        (div :class [:mdc-radio__outer-circle])
+        (div :class [:mdc-radio__inner-circle])))))
