@@ -2,11 +2,11 @@
   (:refer-hoplon :exclude [button])
   (:require [material-hl.core :as core]))
 
-(def ^:dynamic *accent*  false)
-(def ^:dynamic *compact* false)
-(def ^:dynamic *dense*   false)
-(def ^:dynamic *primary* false)
-(def ^:dynamic *raised*  false)
+(def ^:dynamic *accent*  nil)
+(def ^:dynamic *compact* nil)
+(def ^:dynamic *dense*   nil)
+(def ^:dynamic *primary* nil)
+(def ^:dynamic *raised*  nil)
 
 (defelem button [attr kids]
   (let [accent  (:accent  attr *accent*)

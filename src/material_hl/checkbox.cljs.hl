@@ -2,7 +2,7 @@
   (:require [material-hl.core :as core]
             [hoplon.svg :as svg]))
 
-(def ^:dynamic *dark* false)
+(def ^:dynamic *dark* nil)
 
 (defelem checkbox [attr kids]
   (let [dark (:dark attr *dark*)]

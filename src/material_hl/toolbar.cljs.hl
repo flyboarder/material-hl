@@ -2,9 +2,9 @@
   (:refer-hoplon :exclude [section])
   (:require [material-hl.core :as core]))
 
-(def ^:dynamic *fixed* false)
-(def ^:dynamic *start* false)
-(def ^:dynamic *end*   false)
+(def ^:dynamic *fixed* nil)
+(def ^:dynamic *start* nil)
+(def ^:dynamic *end*   nil)
 
 (defelem toolbar [attr kids]
   (let [fixed (:fixed attr *fixed*)]

@@ -2,10 +2,10 @@
   (:require [material-hl.core :as core]
             [material-hl.button :as btn]))
 
-(def ^:dynamic *dark*     false)
-(def ^:dynamic *large*    false)
-(def ^:dynamic *size*     false)
-(def ^:dynamic *vertical* false)
+(def ^:dynamic *dark*     nil)
+(def ^:dynamic *large*    nil)
+(def ^:dynamic *size*     nil)
+(def ^:dynamic *vertical* nil)
 
 (defelem card [attr kids]
   (let [dark (:dark attr *dark*)]
