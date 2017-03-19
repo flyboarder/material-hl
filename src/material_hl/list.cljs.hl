@@ -6,6 +6,7 @@
 (def ^:dynamic *avatar*   nil)
 (def ^:dynamic *start*    nil)
 (def ^:dynamic *end*      nil)
+(def ^:dynamic *inset*    nil)
 
 (defelem list [attr kids]
   (let [dense    (:dense    attr *dense*)
@@ -54,4 +55,28 @@
       (core/assoc-class attr
         {:mdc-list-item__end-detail   end
          :mdc-list-item__start-detail (or start true)})
+      kids)))
+
+(defelem list-divider [attr kids]
+  (let [inset (:inset attr *inset*)]
+    (li
+      (-> attr
+        (assoc :role "separator")
+        (core/assoc-class
+          {:mdc-list-divider        true
+           :mdc-list-divider--inset inset}))
+      kids)))
+
+(defelem list-group [attr kids]
+  (let []
+    (div
+      (core/assoc-class attr
+        {:mdc-list-group true})
+      kids)))
+
+(defelem list-group-subheader [attr kids]
+  (let []
+    (h3
+      (core/assoc-class attr
+        {:mdc-list-group__subheader true})
       kids)))
