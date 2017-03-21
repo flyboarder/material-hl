@@ -1,5 +1,5 @@
 (ns material-hl.core
-  (:require [cljsjs.material]
+  (:require [cljsjs.material-components]
             [goog.dom.classlist :as gcl]))
 
 (def include-fonts #(link :rel "stylesheet" :href "https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&lang=en" :type "text/css"))

@@ -1,0 +1,18 @@
+(ns material-hl.ripple
+  (:require [material-hl.core :as core]
+            [cljsjs.material-components]))
+
+;(def ^:dynamic *disabled* nil)
+
+(defelem ripple [attr kids]
+  (let []
+    (div
+      (core/assoc-class attr
+        {:mdc-ripple-surface true})
+      kids)))
+
+(defmethod hoplon.core/do! :ripple
+  [elem _ v]
+  (let [ripple js/mdc.ripple.MDCRipple]
+    (when v
+      (.attachTo ripple elem))))
