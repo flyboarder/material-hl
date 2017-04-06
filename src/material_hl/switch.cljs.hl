@@ -3,38 +3,21 @@
             [material-hl.button :as btn]
             [cljsjs.material-components]))
 
-;(def ^:dynamic *disabled* nil)
+(def ^:dynamic *disabled* nil)
 
-(defelem snackbar [attr kids]
-  (let []
-    (div :snackbar true
-      (core/assoc-class attr
-        {:mdc-snackbar true})
-      kids)))
+(defelem switch [attr kids]
+  (let [disabled (:disabled attr *disabled*)]
+    (div
+      (core/assoc-class (dissoc attr :id)
+        {:mdc-switch true
+         :mdc-switch--disabled disabled})
+      (input :type "checkbox" :id (:id attr) :class [:mdc-switch__native-control] :disabled disabled)
+      (div :class [:mdc-switch__background]
+        (div :class [:mdc-switch__knob])))))
 
-(defelem snackbar-text [attr kids]
+(defelem switch-label [attr kids]
   (let []
     (div
       (core/assoc-class attr
-        {:mdc-snackbar__text true})
+        {:mdc-switch-label true})
       kids)))
-
-(defelem snackbar-action-wrapper [attr kids]
-  (let []
-    (div
-      (core/assoc-class attr
-        {:mdc-snackbar__action-wrapper true})
-      kids)))
-
-(defelem snackbar-action-button [attr kids]
-  (let []
-    (btn/button
-      (core/assoc-class attr
-        {:mdc-snackbar__action-button true})
-      kids)))
-
-(defmethod hoplon.core/do! :snackbar
-  [elem _ v]
-  (let [snackbar js/mdc.snackbar.MDCSnackbar]
-    (when v
-      (.attachTo snackbar elem))))
