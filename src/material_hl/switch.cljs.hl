@@ -1,4 +1,4 @@
-(ns material-hl.snackbar
+(ns material-hl.switch
   (:require [material-hl.core :as core]
             [material-hl.button :as btn]
             [cljsjs.material-components]))
