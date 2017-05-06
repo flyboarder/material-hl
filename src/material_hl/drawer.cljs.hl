@@ -22,6 +22,48 @@
         {:mdc-permanent-drawer__content true})
       kids)))
 
+(defelem persistent [attr kids]
+  (let []
+    (aside
+      (core/assoc-class attr
+        {:mdc-persistent-drawer true})
+      kids)))
+
+(defelem persistent-drawer [attr kids]
+  (let []
+    (nav
+      (core/assoc-class attr
+        {:mdc-persistent-drawer__drawer true})
+      kids)))
+
+(defelem persistent-content [attr kids]
+  (let []
+    (div
+      (core/assoc-class attr
+        {:mdc-temporary-drawer__content true})
+      kids)))
+
+(defelem persistent-toolbar-spacer [attr kids]
+  (let []
+    (div
+      (core/assoc-class attr
+        {:mdc-persistent-drawer__toolbar-spacer true})
+      kids)))
+
+(defelem persistent-header [attr kids]
+  (let []
+    (header
+      (core/assoc-class attr
+        {:mdc-persistent-drawer__header true})
+      kids)))
+
+(defelem persistent-header-content [attr kids]
+  (let []
+    (header
+      (core/assoc-class attr
+        {:mdc-persistent-drawer__header-content true})
+      kids)))
+
 (defelem temporary [attr kids]
   (let []
     (aside
