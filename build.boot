@@ -30,8 +30,6 @@
   []
   (comp
     (version :develop true
-             :minor 'inc
-             :patch 'zero
              :pre-release 'snapshot)
     (watch)
     (hoplon :manifest true)
