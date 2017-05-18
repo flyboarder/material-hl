@@ -16,14 +16,14 @@
          :mdc-card--theme-dark dark})
       kids)))
 
-(hl/defelem card-media [attr kids]
+(hl/defelem media [attr kids]
   (let []
     (hl/section
       (core/assoc-class attr
         {:mdc-card__media true})
       kids)))
 
-(hl/defelem card-actions [attr kids]
+(hl/defelem actions [attr kids]
   (let [vertical (:vertical attr *vertical*)]
     (hl/section
       (core/assoc-class attr
@@ -31,7 +31,7 @@
          :mdc-card__actions--vertical vertical})
       kids)))
 
-(hl/defelem card-action [attr kids]
+(hl/defelem action [attr kids]
   (let []
     (btn/button
       (core/assoc-class attr
@@ -39,14 +39,14 @@
         {:compact true})
       kids)))
 
-(hl/defelem card-primary [attr kids]
+(hl/defelem primary [attr kids]
   (let []
     (hl/section
       (core/assoc-class attr
         {:mdc-card__primary true})
       kids)))
 
-(hl/defelem card-title [attr kids]
+(hl/defelem title [attr kids]
   (let [large (:large attr *large*)]
     (hl/h1
       (core/assoc-class attr
@@ -54,33 +54,33 @@
          :mdc-card__title--large large})
       kids)))
 
-(hl/defelem card-subtitle [attr kids]
+(hl/defelem subtitle [attr kids]
   (let []
     (hl/h2
       (core/assoc-class attr
         {:mdc-card__subtitle true})
       kids)))
 
-(hl/defelem card-supporting-text [attr kids]
+(hl/defelem supporting-text [attr kids]
   (let []
     (hl/section
       (core/assoc-class attr
         {:mdc-card__supporting-text true})
       kids)))
 
-(hl/defelem card-horizontal-block [attr kids]
+(hl/defelem horizontal-block [attr kids]
   (let []
     (hl/div
       (core/assoc-class attr
         {:mdc-card__horizontal-block true})
       kids)))
 
-(hl/defelem card-media-item [attr kids]
+(hl/defelem media-item [attr kids]
   (let [size (:size attr *size*)]
     (hl/img
       (core/assoc-class attr
         {:mdc-card__media-item true
-         (cond size
+         (case size
            :1.5 :mdc-card__media-item--1dot5x
            :2   :mdc-card__media-item--2x
            :3   :mdc-card__media-item--3x) true})
