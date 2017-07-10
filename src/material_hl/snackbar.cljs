@@ -1,27 +1,26 @@
 (ns material-hl.snackbar
-  (:require [material-hl.core :as core]
+  (:require [hoplon.core :as hl]
+            [material-hl.core :as core]
             [material-hl.button :as btn]
             [cljsjs.material-components]))
 
-;(def ^:dynamic *disabled* nil)
-
 (defelem snackbar [attr kids]
   (let []
-    (div :snackbar true
+    (hl/div :snackbar true
       (core/assoc-class attr
         {:mdc-snackbar true})
       kids)))
 
 (defelem snackbar-text [attr kids]
   (let []
-    (div
+    (hl/div
       (core/assoc-class attr
         {:mdc-snackbar__text true})
       kids)))
 
 (defelem snackbar-action-wrapper [attr kids]
   (let []
-    (div
+    (hl/div
       (core/assoc-class attr
         {:mdc-snackbar__action-wrapper true})
       kids)))

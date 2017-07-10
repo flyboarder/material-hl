@@ -1,5 +1,6 @@
 (ns material-hl.switch
-  (:require [material-hl.core :as core]
+  (:require [hoplon.core :as hl]
+            [material-hl.core :as core]
             [material-hl.button :as btn]
             [cljsjs.material-components]))
 
@@ -7,17 +8,17 @@
 
 (defelem switch [attr kids]
   (let [disabled (:disabled attr *disabled*)]
-    (div
+    (hl/div
       (core/assoc-class (dissoc attr :id)
         {:mdc-switch true
          :mdc-switch--disabled disabled})
-      (input :type "checkbox" :id (:id attr) :class [:mdc-switch__native-control] :disabled disabled)
-      (div :class [:mdc-switch__background]
-        (div :class [:mdc-switch__knob])))))
+      (hl/input :type "checkbox" :id (:id attr) :class [:mdc-switch__native-control] :disabled disabled)
+      (hl/div :class [:mdc-switch__background]
+        (hl/div :class [:mdc-switch__knob])))))
 
 (defelem switch-label [attr kids]
   (let []
-    (div
+    (hl/div
       (core/assoc-class attr
         {:mdc-switch-label true})
       kids)))

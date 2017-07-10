@@ -1,12 +1,11 @@
 (ns material-hl.ripple
-  (:require [material-hl.core :as core]
+  (:require [hoplon.core :as hl]
+            [material-hl.core :as core]
             [cljsjs.material-components]))
-
-;(def ^:dynamic *disabled* nil)
 
 (defelem ripple [attr kids]
   (let []
-    (div
+    (hl/div
       (core/assoc-class attr
         {:mdc-ripple-surface true})
       kids)))

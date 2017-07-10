@@ -1,6 +1,6 @@
 (ns material-hl.menu
-  (:refer-hoplon :exclude [menu])
-  (:require [material-hl.core :as core]))
+  (:require [hoplon.core :as hl]
+            [material-hl.core :as core]))
 
 (def ^:dynamic *top-right*    nil)
 (def ^:dynamic *top-left*     nil)
@@ -12,7 +12,7 @@
         top-left     (:top-left     attr *top-left*)
         bottom-right (:bottom-right attr *bottom-right*)
         bottom-left  (:bottom-left  attr *bottom-left*)]
-    (div
+    (hl/div
       (core/assoc-class attr
         {:mdc-simple-menu                         true
          :mdc-simple-menu--open-from-top-right    top-right
@@ -23,7 +23,7 @@
 
 (defelem menu-items [attr kids]
   (let []
-    (ul
+    (hl/ul
       (-> attr
         (assoc :role "menu")
         (core/assoc-class
@@ -33,7 +33,7 @@
 
 (defelem menu-item [attr kids]
   (let []
-    (li
+    (hl/li
       (-> attr
         (assoc :role "menuitem")
         (core/assoc-class
